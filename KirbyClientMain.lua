@@ -39,9 +39,10 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScrollingFrame.Parent = ScreenGui
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ScrollingFrame.LayoutOrder = -10
+ScrollingFrame.Transparency = 1
 ScrollingFrame.Position = UDim2.new(0, 0, 0.690647483, 0)
 ScrollingFrame.Size = UDim2.new(0, 329, 0, 215)
+ScrollingFrame.ZIndex = 5
 
 DoubleJump.Name = "DoubleJump"
 DoubleJump.Parent = ScrollingFrame
@@ -270,7 +271,7 @@ Background.Position = UDim2.new(-0.0123318387, 0, 0.690647483, 0)
 Background.Size = UDim2.new(0, 340, 0, 201)
 Background.ZIndex = -100
 Background.Font = Enum.Font.SourceSans
-Background.Text = ""
+Background.Text = "hello why are you looking through the code"
 Background.TextColor3 = Color3.fromRGB(0, 0, 0)
 Background.TextSize = 14.000
 -- Scripts:
@@ -592,8 +593,6 @@ local function ZLEFTY_fake_script7() -- Invis.LocalScript
 			scrollingFrame.Size = UDim2.new(0, 329, 0, 215)
 			kirbyClient.Size = UDim2.new(0, 315, 0, 12)
 			kirbyClient.TextSize = 14.000
-			Kirby.Size = UDim2.new(0, 264, 0, 220)
-			Background.Size = UDim2.new(0, 340, 0, 201)
 			button.TextColor3 = black
 			button.BackgroundColor3 = white
 			print("Button is now white")
@@ -604,8 +603,6 @@ local function ZLEFTY_fake_script7() -- Invis.LocalScript
 			kirbyClient.Size = UDim2.new(0, 0, 0, 0)
 			kirbyClient.TextSize = 0.000
 			scrollingFrame.Size = UDim2.new(0, 0, 0, 0)
-			Kirby.Size = UDim2.new(0, 0, 0, 0)
-			Background.Size = UDim2.new(0, 0, 0, 0)
 			button.BackgroundColor3 = black
 			print("Button is now black")
 		end
@@ -823,9 +820,15 @@ game:GetService('RunService').RenderStepped:connect(function()
         game.Workspace.Gravity = 192
 	end
     if BodySize.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+		if BodyWidth.Text != "" then
         game.Players.LocalPlayer.Character.Humanoid.BodyWidthScale.Value = tonumber(BodyWidth.Text)
+		end
+		if BodyLength.Text != "" then
         game.Players.LocalPlayer.Character.Humanoid.BodyDepthScale.Value = tonumber(BodyLength.Text)
+		end
+		if BodyHeight.Text != "" then
         game.Players.LocalPlayer.Character.Humanoid.BodyHeightScale.Value = tonumber(BodyHeight.Text)
+		end
 	end
 	if BodySize.BackgroundColor3 == Color3.fromRGB(255,0,0) then
         game.Players.LocalPlayer.Character.Humanoid.BodyWidthScale.Value = 1
