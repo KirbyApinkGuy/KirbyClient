@@ -768,6 +768,12 @@ mouse.KeyDown:connect(function(key)
               wait(0.1)
 		JumpRun = true
     end
+    if key == "c" then
+        GravityChanger.BackgroundColor3 = Color3.fromRGB(0,255,0)
+    end
+    if key == "v" then
+        GravityChanger.BackgroundColor3 = Color3.fromRGB(255,0,0)
+    end
 end)
 
 game:GetService('RunService').RenderStepped:connect(function()
