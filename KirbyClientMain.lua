@@ -9,6 +9,7 @@ local Gravity = Instance.new("TextBox")
 local BodyLength = Instance.new("TextBox")
 local BodyHeight = Instance.new("TextBox")
 local ESP = Instance.new("TextButton")
+local BoxOn = Instance.new("TextButton")
 local SpeedHack = Instance.new("TextButton")
 local Speed = Instance.new("TextBox")
 local JumpHeight = Instance.new("TextButton")
@@ -24,6 +25,7 @@ local KirbyClientLabel = Instance.new("TextLabel")
 local Kirby = Instance.new("ImageLabel")
 local Background = Instance.new("TextLabel")
 
+ESPBoxOn = false
 Player = game.Players.LocalPlayer
 colourRed = Color3.fromRGB(255,0,0)
 colourGreen = Color3.fromRGB(0,255,0)
@@ -129,6 +131,16 @@ ESP.Font = Enum.Font.Nunito
 ESP.Text = "ESP "
 ESP.TextColor3 = Color3.fromRGB(0, 0, 0)
 ESP.TextSize = 14.000
+
+BoxOn.Name = "BoxOn"
+BoxOn.Parent = ESP
+BoxOn.BackgroundColor3 = Color3.fromRGB(252, 0, 6)
+BoxOn.Position = UDim2.new(1.1, 0, 0, 0)
+BoxOn.Size = UDim2.new(0, 73, 0, 31)
+BoxOn.Font = Enum.Font.Nunito
+BoxOn.Text = "Box"
+BoxOn.TextColor3 = Color3.fromRGB(0, 0, 0)
+BoxOn.TextSize = 14.000
 
 SpeedHack.Name = "SpeedHack"
 SpeedHack.Parent = ScrollingFrame
@@ -255,6 +267,7 @@ KirbyClientLabel.Font = Enum.Font.Code
 KirbyClientLabel.Text = "KirbyClient 1.0.0"
 KirbyClientLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 KirbyClientLabel.TextSize = 14.000
+KirbyClientLabel.ZIndex = 100
 
 Kirby.Parent = ScreenGui
 Kirby.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -268,19 +281,19 @@ Background.Name = "Background"
 Background.Parent = ScreenGui
 Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Background.Position = UDim2.new(-0.0123318387, 0, 0.690647483, 0)
-Background.Size = UDim2.new(0, 340, 0, 201)
+Background.Size = UDim2.new(0, 347, 0, 215)
 Background.ZIndex = -100
 Background.Font = Enum.Font.SourceSans
-Background.Text = "hello why are you looking through the code"
+Background.Text = ""
 Background.TextColor3 = Color3.fromRGB(0, 0, 0)
 Background.TextSize = 14.000
 -- Scripts:
 
-function EspStart(o)
+function EspStart(o, q)
 	if o ~= true then
 		local Holder = Instance.new("Folder", game.CoreGui)
 		Holder.Name = "ESP"
-
+		if q then
 		local Box = Instance.new("BoxHandleAdornment")
 		Box.Name = "nilBox"
 		Box.Size = Vector3.new(4, 7, 4)
@@ -289,6 +302,7 @@ function EspStart(o)
 		Box.ZIndex = 0
 		Box.AlwaysOnTop = true
 		Box.Visible = true
+		end
 
 		local NameTag = Instance.new("BillboardGui")
 		NameTag.Name = "nilNameTag"
@@ -314,10 +328,12 @@ function EspStart(o)
 			v.Character:WaitForChild("Humanoid")
 			local vHolder = Holder:FindFirstChild(v.Name)
 			vHolder:ClearAllChildren()
+			if q then
 			local b = Box:Clone()
 			b.Name = v.Name .. "Box"
 			b.Adornee = v.Character
 			b.Parent = vHolder
+			end
 			local t = NameTag:Clone()
 			t.Name = v.Name .. "NameTag"
 			t.Enabled = true
@@ -593,6 +609,8 @@ local function ZLEFTY_fake_script7() -- Invis.LocalScript
 			scrollingFrame.Size = UDim2.new(0, 329, 0, 215)
 			kirbyClient.Size = UDim2.new(0, 315, 0, 12)
 			kirbyClient.TextSize = 14.000
+			Kirby.Size = UDim2.new(0, 264, 0, 220)
+			Background.Size = UDim2.new(0, 347, 0, 215)
 			button.TextColor3 = black
 			button.BackgroundColor3 = white
 			print("Button is now white")
@@ -603,6 +621,8 @@ local function ZLEFTY_fake_script7() -- Invis.LocalScript
 			kirbyClient.Size = UDim2.new(0, 0, 0, 0)
 			kirbyClient.TextSize = 0.000
 			scrollingFrame.Size = UDim2.new(0, 0, 0, 0)
+			Kirby.Size = UDim2.new(0, 0, 0, 0)
+			Background.Size = UDim2.new(0, 0, 0, 0)
 			button.BackgroundColor3 = black
 			print("Button is now black")
 		end
@@ -710,7 +730,28 @@ local function ZLEFTY_fake_script12() -- Invis.LocalScript
 	script.Parent.MouseButton1Click:connect(changeColor)
 end
 coroutine.wrap(ZLEFTY_fake_script12)()
-
+local function ZLEFTY_fake_script13() -- Invis.LocalScript 
+	local script = Instance.new('LocalScript', BoxOn)
+	local button = script.Parent
+	local red = Color3.fromRGB(255,0,0)
+	local green = Color3.fromRGB(0,255,0)
+	local Colour = "red"
+	button.BackgroundColor3 = red
+	function changeColor()
+		print("Player Clicked")
+		if Colour == "green" then
+			Colour = "red"
+			button.BackgroundColor3 = red
+			print("Button is now red")
+		elseif Colour == "red" then
+			Colour = "green"
+			button.BackgroundColor3 = green
+			print("Button is now green")
+		end
+	end
+	script.Parent.MouseButton1Click:connect(changeColor)
+end
+coroutine.wrap(ZLEFTY_fake_script13)()
 mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:connect(function(key)
 	if key == " " and AutomaticManual.BackgroundColor3 == Color3.fromRGB(255,0,0) and InfiniteJump.BackgroundColor3 == Color3.fromRGB(0,255,0) then
@@ -798,8 +839,14 @@ game:GetService('RunService').RenderStepped:connect(function()
 		PlayerSpeedOff = false
 	end
 	if ESP.BackgroundColor3 == Color3.fromRGB(0,255,0) then
-		EspStart(ESPOn)
+		EspStart(ESPOn, ESPBoxOn)
 		ESPOn = true
+	end
+	if BoxOn.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+		ESPBoxOn = true
+	end
+	if BoxOn.BackgroundColor3 == Color3.fromRGB(255,0,0) then
+		ESPBoxOn = false
 	end
 	if SpeedHack.BackgroundColor3 == Color3.fromRGB(255,0,0) and PlayerSpeedOff == false then
 		Player.Character.Humanoid.WalkSpeed = 20
