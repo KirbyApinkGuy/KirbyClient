@@ -819,4 +819,6 @@ end)
 
 game:GetService("UserInputService").JumpRequest:connect(function()
 	if AutomaticManual.BackgroundColor3 == colourGreen and InfiniteJump.BackgroundColor3 == colourGreen then
-		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
