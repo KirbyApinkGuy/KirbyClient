@@ -790,13 +790,13 @@ mouse.KeyDown:connect(function(key)
 end)
 
 game:GetService('RunService').RenderStepped:connect(function()
-	if HitboxExtender.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+	if HitboxExtender.BackgroundColor3 == Color3.fromRGB(0,255,0) and HitboxSize.Text != "" then
 		HitboxStart(tonumber(HitboxSize.Text))
 	end
 	if HitboxExtender.BackgroundColor3 == Color3.fromRGB(255,0,0) then
 		HitboxStart(2)
 	end
-	if SpeedHack.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+	if SpeedHack.BackgroundColor3 == Color3.fromRGB(0,255,0) and Speed.Text != "" then
 		Player.Character.Humanoid.WalkSpeed = tonumber(Speed.Text)
 		PlayerSpeedOff = false
 	end
@@ -808,7 +808,7 @@ game:GetService('RunService').RenderStepped:connect(function()
 		Player.Character.Humanoid.WalkSpeed = 20
 		PlayerSpeedOff = true
 	end
-	if JumpHeight.BackgroundColor3 == Color3.fromRGB(0,255,0) and JumpRun == true then
+	if JumpHeight.BackgroundColor3 == Color3.fromRGB(0,255,0) and JumpRun == true and Height.Text != "" then
         Player.Character.Humanoid.JumpHeight = tonumber(Height.Text)
 		Player.Character.Humanoid.JumpPower = tonumber(Height.Text)
 	end
@@ -816,7 +816,7 @@ game:GetService('RunService').RenderStepped:connect(function()
         Player.Character.Humanoid.JumpHeight = 7.2
 		Player.Character.Humanoid.JumpPower = 10
 	end
-	if GravityChanger.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+	if GravityChanger.BackgroundColor3 == Color3.fromRGB(0,255,0) and Gravity.Text != "" then
 		game.Workspace.Gravity = tonumber(Gravity.Text)
 	end
 	if GravityChanger.BackgroundColor3 == Color3.fromRGB(255,0,0) then
