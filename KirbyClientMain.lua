@@ -21,10 +21,12 @@ local InfiniteJump = Instance.new("TextButton")
 local AutomaticManual = Instance.new("TextButton")
 local HideShow = Instance.new("TextButton")
 local KirbyClientLabel = Instance.new("TextLabel")
+local Kirby = Instance.new("ImageLabel")
+local Background = Instance.new("TextLabel")
+
 Player = game.Players.LocalPlayer
 colourRed = Color3.fromRGB(255,0,0)
 colourGreen = Color3.fromRGB(0,255,0)
-PlayerWalkSpeed = 0
 ESPOn = false
 JumpRun = true
 PlayerSpeedOff = false
@@ -252,6 +254,25 @@ KirbyClientLabel.Font = Enum.Font.Code
 KirbyClientLabel.Text = "KirbyClient 1.0.0"
 KirbyClientLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 KirbyClientLabel.TextSize = 14.000
+
+Kirby.Parent = ScreenGui
+Kirby.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Kirby.BackgroundTransparency = 1.000
+Kirby.Position = UDim2.new(-0.0840807259, 0, 0.747570574, 0)
+Kirby.Size = UDim2.new(0, 264, 0, 220)
+Kirby.ZIndex = 0
+Kirby.Image = "http://www.roblox.com/asset/?id=5389109949"
+
+Background.Name = "Background"
+Background.Parent = ScreenGui
+Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Background.Position = UDim2.new(-0.0123318387, 0, 0.690647483, 0)
+Background.Size = UDim2.new(0, 340, 0, 201)
+Background.ZIndex = -100
+Background.Font = Enum.Font.SourceSans
+Background.Text = "hello why are you looking through the code"
+Background.TextColor3 = Color3.fromRGB(0, 0, 0)
+Background.TextSize = 14.000
 -- Scripts:
 
 function EspStart(o)
