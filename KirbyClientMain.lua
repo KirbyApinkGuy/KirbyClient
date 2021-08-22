@@ -270,7 +270,7 @@ Background.Position = UDim2.new(-0.0123318387, 0, 0.690647483, 0)
 Background.Size = UDim2.new(0, 340, 0, 201)
 Background.ZIndex = -100
 Background.Font = Enum.Font.SourceSans
-Background.Text = "hello why are you looking through the code"
+Background.Text = ""
 Background.TextColor3 = Color3.fromRGB(0, 0, 0)
 Background.TextSize = 14.000
 -- Scripts:
@@ -592,6 +592,8 @@ local function ZLEFTY_fake_script7() -- Invis.LocalScript
 			scrollingFrame.Size = UDim2.new(0, 329, 0, 215)
 			kirbyClient.Size = UDim2.new(0, 315, 0, 12)
 			kirbyClient.TextSize = 14.000
+			Kirby.Size = UDim2.new(0, 264, 0, 220)
+			Background.Size = UDim2.new(0, 340, 0, 201)
 			button.TextColor3 = black
 			button.BackgroundColor3 = white
 			print("Button is now white")
@@ -602,6 +604,8 @@ local function ZLEFTY_fake_script7() -- Invis.LocalScript
 			kirbyClient.Size = UDim2.new(0, 0, 0, 0)
 			kirbyClient.TextSize = 0.000
 			scrollingFrame.Size = UDim2.new(0, 0, 0, 0)
+			Kirby.Size = UDim2.new(0, 0, 0, 0)
+			Background.Size = UDim2.new(0, 0, 0, 0)
 			button.BackgroundColor3 = black
 			print("Button is now black")
 		end
