@@ -391,7 +391,6 @@ local function ZLEFTY_fake_script() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', JumpHeight)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -415,7 +414,6 @@ local function ZLEFTY_fake_script1() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', SpeedHack)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -439,7 +437,6 @@ local function ZLEFTY_fake_script2() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', DoubleJump)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -463,7 +460,6 @@ local function ZLEFTY_fake_script3() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', InfiniteJump)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -487,7 +483,6 @@ local function ZLEFTY_fake_script4() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', AutomaticManual)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local manual = "Manual"
 	local automatic = "Automatic"
@@ -515,7 +510,6 @@ local function ZLEFTY_fake_script5() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', DoubleJump)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -539,7 +533,6 @@ local function ZLEFTY_fake_script6() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', BodySize)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -600,7 +593,6 @@ local function ZLEFTY_fake_script8() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', HitboxExtender)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -623,7 +615,6 @@ local function ZLEFTY_fake_script9() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', ESP)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -643,7 +634,6 @@ local function ZLEFTY_fake_script10() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', BedwarsMonkey)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -662,7 +652,6 @@ local function ZLEFTY_fake_script11() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', InfiniteYield)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -681,7 +670,6 @@ local function ZLEFTY_fake_script12() -- Invis.LocalScript
 	local script = Instance.new('LocalScript', GravityChanger)
 	local button = script.Parent
 	local red = Color3.fromRGB(255,0,0)
-	local blue = Color3.fromRGB(0,0,255)
 	local green = Color3.fromRGB(0,255,0)
 	local Colour = "red"
 	button.BackgroundColor3 = red
@@ -768,11 +756,11 @@ mouse.KeyDown:connect(function(key)
               wait(0.1)
 		JumpRun = true
     end
-    if key == "c" then
-        GravityChanger.BackgroundColor3 = Color3.fromRGB(0,255,0)
+	if key == "c" then
+		GravityChanger.BackgroundColor3 = Color3.fromRGB(0,255,0)
     end
-    if key == "v" then
-        GravityChanger.BackgroundColor3 = Color3.fromRGB(255,0,0)
+	if key == "v" then
+		GravityChanger.BackgroundColor3 = Color3.fromRGB(255,0,0)
     end
 end)
 
