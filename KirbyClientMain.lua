@@ -714,7 +714,6 @@ local function ZLEFTY_fake_script12() -- Invis.LocalScript
 	script.Parent.MouseButton1Click:connect(changeColor)
 end
 coroutine.wrap(ZLEFTY_fake_script12)()
-coroutine.wrap(ZLEFTY_fake_script13)()
 mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:connect(function(key)
 	if key == " " and AutomaticManual.BackgroundColor3 == Color3.fromRGB(255,0,0) and InfiniteJump.BackgroundColor3 == Color3.fromRGB(0,255,0) then
