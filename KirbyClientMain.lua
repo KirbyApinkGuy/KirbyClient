@@ -277,7 +277,7 @@ Background.TextColor3 = Color3.fromRGB(0, 0, 0)
 Background.TextSize = 14.000
 -- Scripts:
 
-function EspStart(o, q)
+function EspStart(o)
 	if o ~= true then
 		local Holder = Instance.new("Folder", game.CoreGui)
 		Holder.Name = "ESP"
@@ -802,14 +802,8 @@ game:GetService('RunService').RenderStepped:connect(function()
 		PlayerSpeedOff = false
 	end
 	if ESP.BackgroundColor3 == Color3.fromRGB(0,255,0) then
-		EspStart(ESPOn, ESPBoxOn)
+		EspStart(ESPOn)
 		ESPOn = true
-	end
-	if BoxOn.BackgroundColor3 == Color3.fromRGB(0,255,0) then
-		ESPBoxOn = true
-	end
-	if BoxOn.BackgroundColor3 == Color3.fromRGB(255,0,0) then
-		ESPBoxOn = false
 	end
 	if SpeedHack.BackgroundColor3 == Color3.fromRGB(255,0,0) and PlayerSpeedOff == false then
 		Player.Character.Humanoid.WalkSpeed = 20
