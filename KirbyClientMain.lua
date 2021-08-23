@@ -9,7 +9,6 @@ local Gravity = Instance.new("TextBox")
 local BodyLength = Instance.new("TextBox")
 local BodyHeight = Instance.new("TextBox")
 local ESP = Instance.new("TextButton")
-local BoxOn = Instance.new("TextButton")
 local SpeedHack = Instance.new("TextButton")
 local Speed = Instance.new("TextBox")
 local JumpHeight = Instance.new("TextButton")
@@ -25,7 +24,6 @@ local KirbyClientLabel = Instance.new("TextLabel")
 local Kirby = Instance.new("ImageLabel")
 local Background = Instance.new("TextLabel")
 
-ESPBoxOn = false
 Player = game.Players.LocalPlayer
 colourRed = Color3.fromRGB(255,0,0)
 colourGreen = Color3.fromRGB(0,255,0)
@@ -131,16 +129,6 @@ ESP.Font = Enum.Font.Nunito
 ESP.Text = "ESP "
 ESP.TextColor3 = Color3.fromRGB(0, 0, 0)
 ESP.TextSize = 14.000
-
-BoxOn.Name = "BoxOn"
-BoxOn.Parent = ESP
-BoxOn.BackgroundColor3 = Color3.fromRGB(252, 0, 6)
-BoxOn.Position = UDim2.new(1.1, 0, 0, 0)
-BoxOn.Size = UDim2.new(0, 73, 0, 31)
-BoxOn.Font = Enum.Font.Nunito
-BoxOn.Text = "Box"
-BoxOn.TextColor3 = Color3.fromRGB(0, 0, 0)
-BoxOn.TextSize = 14.000
 
 SpeedHack.Name = "SpeedHack"
 SpeedHack.Parent = ScrollingFrame
@@ -293,7 +281,6 @@ function EspStart(o, q)
 	if o ~= true then
 		local Holder = Instance.new("Folder", game.CoreGui)
 		Holder.Name = "ESP"
-		if q then
 		local Box = Instance.new("BoxHandleAdornment")
 		Box.Name = "nilBox"
 		Box.Size = Vector3.new(4, 7, 4)
@@ -302,7 +289,6 @@ function EspStart(o, q)
 		Box.ZIndex = 0
 		Box.AlwaysOnTop = true
 		Box.Visible = true
-		end
 
 		local NameTag = Instance.new("BillboardGui")
 		NameTag.Name = "nilNameTag"
@@ -328,12 +314,10 @@ function EspStart(o, q)
 			v.Character:WaitForChild("Humanoid")
 			local vHolder = Holder:FindFirstChild(v.Name)
 			vHolder:ClearAllChildren()
-			if q then
 			local b = Box:Clone()
 			b.Name = v.Name .. "Box"
 			b.Adornee = v.Character
 			b.Parent = vHolder
-			end
 			local t = NameTag:Clone()
 			t.Name = v.Name .. "NameTag"
 			t.Enabled = true
@@ -730,27 +714,6 @@ local function ZLEFTY_fake_script12() -- Invis.LocalScript
 	script.Parent.MouseButton1Click:connect(changeColor)
 end
 coroutine.wrap(ZLEFTY_fake_script12)()
-local function ZLEFTY_fake_script13() -- Invis.LocalScript 
-	local script = Instance.new('LocalScript', BoxOn)
-	local button = script.Parent
-	local red = Color3.fromRGB(255,0,0)
-	local green = Color3.fromRGB(0,255,0)
-	local Colour = "red"
-	button.BackgroundColor3 = red
-	function changeColor()
-		print("Player Clicked")
-		if Colour == "green" then
-			Colour = "red"
-			button.BackgroundColor3 = red
-			print("Button is now red")
-		elseif Colour == "red" then
-			Colour = "green"
-			button.BackgroundColor3 = green
-			print("Button is now green")
-		end
-	end
-	script.Parent.MouseButton1Click:connect(changeColor)
-end
 coroutine.wrap(ZLEFTY_fake_script13)()
 mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:connect(function(key)
